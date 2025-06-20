@@ -1,3 +1,3 @@
-module github.com/black-dev-x/go-lab-cloud-run
+module github.com/black-dev-x/go-lab-cep-temperature
 
 go 1.24.0

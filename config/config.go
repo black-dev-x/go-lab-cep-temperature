@@ -6,8 +6,6 @@ import (
 	"strings"
 )
 
-var WEATHER_API_KEY string
-
 func Load() {
 	if file, err := os.Open(".env"); err == nil {
 		defer file.Close()
@@ -27,5 +25,4 @@ func Load() {
 			os.Setenv(key, value)
 		}
 	}
-	WEATHER_API_KEY = os.Getenv("WEATHER_API_KEY")
 }

@@ -1,13 +1,15 @@
 package temperature
 
 type Temperature struct {
+	City       string  `json:"city"`
 	Celsius    float64 `json:"temp_C"`
 	Fahrenheit float64 `json:"temp_F"`
 	Kelvin     float64 `json:"temp_K"`
 }
 
-func New(celsius float64) *Temperature {
+func New(city string, celsius float64) *Temperature {
 	return &Temperature{
+		City:       city,
 		Celsius:    celsius,
 		Fahrenheit: ToFahrenheit(celsius),
 		Kelvin:     ToKelvin(celsius),

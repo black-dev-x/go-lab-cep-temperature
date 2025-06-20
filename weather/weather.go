@@ -5,8 +5,7 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
-
-	"github.com/black-dev-x/go-lab-cloud-run/config"
+	"os"
 )
 
 type Weather struct {
@@ -59,7 +58,7 @@ type Weather struct {
 
 func Get(location string) (*Weather, error) {
 	location = url.QueryEscape(location)
-	requestUrl := fmt.Sprintf("https://api.weatherapi.com/v1/current.json?key=%s&q=%s", config.WEATHER_API_KEY, location)
+	requestUrl := fmt.Sprintf("https://api.weatherapi.com/v1/current.json?key=%s&q=%s", os.Getenv("WEATHER_API_KEY"), location)
 	httpResp, err := http.Get(requestUrl)
 	println(httpResp.StatusCode)
 	if err != nil {
