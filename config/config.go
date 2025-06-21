@@ -7,6 +7,7 @@ import (
 )
 
 func Load() {
+	println("Configuration loading.")
 	if file, err := os.Open(".env"); err == nil {
 		defer file.Close()
 		scanner := bufio.NewScanner(file)
@@ -25,4 +26,5 @@ func Load() {
 			os.Setenv(key, value)
 		}
 	}
+	println("Configuration loaded successfully.")
 }

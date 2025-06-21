@@ -4,12 +4,12 @@ POST http://localhost:3000
 Content-Type: application/json
 
 {
-  "cep": "00000000"
+  "cep": "74543490"
 }
 
 POST http://localhost:4000
 Content-Type: application/json
 
 {
-  "cep": "invalid"
+  "cep": "74543490"
 }
